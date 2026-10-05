@@ -48,14 +48,8 @@ document.addEventListener('click', event => {
 });
 window.matchMedia('(min-width: 901px)').addEventListener('change', closeMenu);
 
-// TODO: Tally contact form. Prevent all network submission and storage in Phase 1.
-document.querySelector('#enquiry-form button[type="submit"]').disabled = false;
-document.querySelector('#enquiry-form').addEventListener('submit', event => {
-  event.preventDefault();
-  showNotice('Enquiries open soon.', 'This form is a preview. Your details have not been sent or saved.');
-});
 const legalMessages = {
-  privacy: ['Privacy Policy', 'This Phase 1 preview does not submit or store form entries and has no analytics, payment, or booking integrations. A full privacy policy will be provided before these services launch.'],
+  privacy: ['Privacy Policy', 'Enquiry form submissions are sent to Formspree. A full privacy policy will be provided.'],
   terms: ['Terms', 'Coaching services cannot be purchased or booked through this preview. Service terms will be published before launch. Transformation stories and testimonials are illustrative examples, not verified client accounts.']
 };
 document.querySelectorAll('[data-legal]').forEach(button => button.addEventListener('click', () => showNotice(...legalMessages[button.dataset.legal])));
