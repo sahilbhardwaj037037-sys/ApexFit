@@ -44,38 +44,12 @@ if (loginForm) {
   });
 }
 
-// Entirely fictional fixtures. Reserved example.com emails, masked phones,
-// and demo IDs are intentional. Never replace fixtures with real customer data.
+// No records loaded. Keep these collections empty until a backend is connected.
 const sampleData = {
-  leads: [
-    { id:'lead_demo_001', name:'Rahul Sharma', email:'rahul@example.com', phone:'+91 XXXXX 00001', goal:'Build muscle', level:'Intermediate', training:'Online', budget:'₹2,000–₹3,000', status:'New', created:'11 Oct 2026' },
-    { id:'lead_demo_002', name:'Priya Mehta', email:'priya@example.com', phone:'+91 XXXXX 00002', goal:'Improve overall fitness', level:'Beginner', training:'In-person', budget:'₹3,000–₹6,000', status:'Contacted', created:'10 Oct 2026' },
-    { id:'lead_demo_003', name:'Aman Verma', email:'aman@example.com', phone:'+91 XXXXX 00003', goal:'Lose body fat', level:'Beginner', training:'Online', budget:'₹2,000–₹3,000', status:'Qualified', created:'09 Oct 2026' },
-    { id:'lead_demo_004', name:'Neha Kapoor', email:'neha@example.com', phone:'+91 XXXXX 00004', goal:'Build strength', level:'Advanced', training:'Hybrid', budget:'₹3,000–₹6,000', status:'Converted', created:'08 Oct 2026' },
-    { id:'lead_demo_005', name:'Arjun Rao', email:'arjun@example.com', phone:'+91 XXXXX 00005', goal:'Improve mobility', level:'Beginner', training:'Online', budget:'Under ₹2,000', status:'Lost', created:'07 Oct 2026' },
-    { id:'lead_demo_006', name:'Isha Nair', email:'isha@example.com', phone:'+91 XXXXX 00006', goal:'Build muscle', level:'Intermediate', training:'In-person', budget:'₹3,000–₹6,000', status:'New', created:'06 Oct 2026' }
-  ],
-  bookings: [
-    { id:'cal_demo_001', name:'Rahul Sharma', email:'rahul@example.com', phone:'+91 XXXXX 00001', date:'12 Oct 2026', time:'09:00 AM IST', event:'Fitness Assessment', status:'Upcoming', bookingId:'cal_demo_001' },
-    { id:'cal_demo_002', name:'Priya Mehta', email:'priya@example.com', phone:'+91 XXXXX 00002', date:'12 Oct 2026', time:'11:30 AM IST', event:'Free Consultation', status:'Upcoming', bookingId:'cal_demo_002' },
-    { id:'cal_demo_003', name:'Isha Nair', email:'isha@example.com', phone:'+91 XXXXX 00006', date:'13 Oct 2026', time:'04:00 PM IST', event:'Coaching Check-in', status:'Upcoming', bookingId:'cal_demo_003' },
-    { id:'cal_demo_004', name:'Aman Verma', email:'aman@example.com', phone:'+91 XXXXX 00003', date:'10 Oct 2026', time:'10:00 AM IST', event:'Fitness Assessment', status:'Completed', bookingId:'cal_demo_004' },
-    { id:'cal_demo_005', name:'Neha Kapoor', email:'neha@example.com', phone:'+91 XXXXX 00004', date:'14 Oct 2026', time:'05:30 PM IST', event:'Coaching Check-in', status:'Rescheduled', bookingId:'cal_demo_005' },
-    { id:'cal_demo_006', name:'Arjun Rao', email:'arjun@example.com', phone:'+91 XXXXX 00005', date:'09 Oct 2026', time:'02:00 PM IST', event:'Free Consultation', status:'Cancelled', bookingId:'cal_demo_006' }
-  ],
-  payments: [
-    { id:'pay_demo_001', name:'Rahul Sharma', email:'rahul@example.com', phone:'+91 XXXXX 00001', amount:499, purpose:'Fitness Assessment', status:'Paid', paymentId:'pay_demo_001', date:'11 Oct 2026' },
-    { id:'pay_demo_002', name:'Neha Kapoor', email:'neha@example.com', phone:'+91 XXXXX 00004', amount:5999, purpose:'Premium 1-on-1', status:'Paid', paymentId:'pay_demo_002', date:'10 Oct 2026' },
-    { id:'pay_demo_003', name:'Priya Mehta', email:'priya@example.com', phone:'+91 XXXXX 00002', amount:2999, purpose:'Monthly Coaching', status:'Pending', paymentId:'pay_demo_003', date:'10 Oct 2026' },
-    { id:'pay_demo_004', name:'Aman Verma', email:'aman@example.com', phone:'+91 XXXXX 00003', amount:499, purpose:'Fitness Assessment', status:'Failed', paymentId:'pay_demo_004', date:'09 Oct 2026' },
-    { id:'pay_demo_005', name:'Arjun Rao', email:'arjun@example.com', phone:'+91 XXXXX 00005', amount:499, purpose:'Fitness Assessment', status:'Refunded', paymentId:'pay_demo_005', date:'08 Oct 2026' }
-  ],
-  enquiries: [
-    { id:'enquiry_demo_001', name:'Priya Mehta', email:'priya@example.com', phone:'+91 XXXXX 00002', goal:'Improve overall fitness', message:'I’m getting back into fitness and would love to learn about your beginner-friendly coaching plans. Are evening sessions available?', status:'New', received:'11 Oct 2026, 10:15 AM IST' },
-    { id:'enquiry_demo_002', name:'Rahul Sharma', email:'rahul@example.com', phone:'+91 XXXXX 00001', goal:'Build muscle', message:'Could you tell me more about the monthly coaching plan? I train at home and have a set of dumbbells.', status:'New', received:'11 Oct 2026, 09:30 AM IST' },
-    { id:'enquiry_demo_003', name:'Aman Verma', email:'aman@example.com', phone:'+91 XXXXX 00003', goal:'Lose body fat', message:'Thanks for explaining the assessment. I would like to know what to prepare before our session.', status:'Replied', received:'10 Oct 2026, 02:45 PM IST' },
-    { id:'enquiry_demo_004', name:'Neha Kapoor', email:'neha@example.com', phone:'+91 XXXXX 00004', goal:'Build strength', message:'I found the plan details I needed. Thank you for your help!', status:'Closed', received:'09 Oct 2026, 04:20 PM IST' }
-  ]
+  leads: [],
+  bookings: [],
+  payments: [],
+  enquiries: []
 };
 
 const sections = {
@@ -83,6 +57,40 @@ const sections = {
   bookings: { title:'Bookings', eyebrow:'MAKE TIME FOR PROGRESS', description:'A clear view of every conversation and coaching session.', statuses:['Upcoming','Completed','Cancelled','Rescheduled'], columns:[['name','Customer Name'],['email','Email'],['phone','Phone'],['date','Booking Date'],['time','Booking Time'],['event','Event Type'],['status','Status'],['bookingId','Cal Booking ID']] },
   payments: { title:'Payments', eyebrow:'THE BUSINESS BEHIND THE PROGRESS', description:'Keep a clear view of sample payments and their status.', statuses:['Paid','Pending','Failed','Refunded'], columns:[['name','Customer Name'],['email','Email'],['phone','Phone'],['amount','Amount'],['purpose','Payment For'],['status','Payment Status'],['paymentId','Razorpay Payment ID'],['date','Payment Date']] },
   enquiries: { title:'Enquiries', eyebrow:'EVERY CONVERSATION COUNTS', description:'A thoughtful first response can make all the difference.', statuses:['New','Replied','Closed'], columns:[['name','Full Name'],['email','Email'],['phone','Phone'],['goal','Primary Goal'],['message','Message'],['status','Status'],['received','Received At']] }
+};
+// Management shortcuts only: these URLs carry no credentials and make no API calls.
+// Sync notes describe the external Airtable workflows, not the sample tables here.
+const managementLinks = {
+  leads: {
+    status: 'Airtable sync active · Dashboard records are samples.',
+    links: [
+      ['Open in Airtable', 'https://airtable.com/appCE7p7iBWbUwimI/tblfe5QPdMo7xx9Kt/viwl1uWIrgzKEVXLf?blocks=hide'],
+      ['Open Tally', 'https://tally.so/forms/b50qGZ']
+    ]
+  },
+  bookings: {
+    status: 'Airtable sync active · Dashboard records are samples.',
+    links: [
+      ['Open in Airtable', 'https://airtable.com/appCE7p7iBWbUwimI/tblti6eQODbZ7H50X/viw2Jq9vkcu9AFiYi?blocks=hide'],
+      ['Open Cal.com', 'https://app.cal.com/event-types'],
+      ['Open Gmail', 'https://mail.google.com/mail/']
+    ]
+  },
+  payments: {
+    status: 'Airtable automation inactive · Payment sync is not confirmed.',
+    links: [
+      ['Open in Airtable', 'https://airtable.com/appCE7p7iBWbUwimI/tblL6akJ8ulD5ibhF/viwSKWuNe3RmXZ6eh?blocks=hide'],
+      ['Open Razorpay', 'https://dashboard.razorpay.com/app/dashboard']
+    ]
+  },
+  enquiries: {
+    status: 'Airtable sync is not active yet.',
+    links: [
+      ['Open in Airtable', 'https://airtable.com/appCE7p7iBWbUwimI/tblaqlbTOMQy3pyfk/viwhznn8jvXHaqJxh?blocks=hide'],
+      ['Open Formspree', 'https://formspree.io/forms'],
+      ['Open Gmail', 'https://mail.google.com/mail/']
+    ]
+  }
 };
 const currency = new Intl.NumberFormat('en-IN', {style:'currency', currency:'INR', maximumFractionDigits:0});
 // Every view uses this provider. Swap the appropriate method for backend.getLeads(),
@@ -188,7 +196,7 @@ if (document.querySelector('.dashboard-page')) {
     if (records.length) target.append(renderTable(section, records));
     else {
       const empty = element('div', 'empty-state');
-      empty.append(element('h3', '', 'No matching records'), element('p', '', 'Try another search or clear your filters.'));
+      empty.append(element('h3', '', all.length ? 'No matching records' : `No ${section} yet`), element('p', '', all.length ? 'Try another search or clear your filters.' : 'No records loaded.'));
       const reset = element('button', 'secondary-button', 'Clear filters');
       reset.type = 'button';
       reset.addEventListener('click', () => {
@@ -207,6 +215,26 @@ if (document.querySelector('.dashboard-page')) {
     // Only constant interface labels are inserted as HTML. All record and user text
     // is rendered with textContent or form values, never interpolated into markup.
     section.innerHTML = `<div class="page-heading"><div><p class="eyebrow">${config.eyebrow}</p><h1 id="${key}-title">${config.title}</h1><p>${config.description}</p></div><span class="section-heading-count">${getPreviewRecords(key).length} sample records</span></div><div class="panel"><div class="table-toolbar"><div class="search-control"><label for="${key}-search">Search ${key}</label><input id="${key}-search" type="search" placeholder="Search by name, email, or details…" autocomplete="off"></div><div class="filter-control"><label for="${key}-filter">Status</label><select id="${key}-filter"><option value="">All statuses</option></select></div><span id="${key}-count" class="table-count" role="status" aria-live="polite"></span></div><div id="${key}-table"></div><div class="table-footer"><span>Sample data only · No live records</span><span>Scroll the table to see all details ↔</span></div></div>`;
+    const heading = section.querySelector('.page-heading');
+    heading.classList.add('management-heading');
+    const management = element('div', 'section-management');
+    const links = element('nav', 'management-links');
+    links.setAttribute('aria-label', `${config.title} management links`);
+    managementLinks[key].links.forEach(([label, url]) => {
+      const link = element('a', 'management-link', label);
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.title = label === 'Open in Airtable'
+        ? 'Advanced and manual record management in Airtable (opens in a new tab)'
+        : `${label} (opens in a new tab)`;
+      const arrow = element('span', '', '↗');
+      arrow.setAttribute('aria-hidden', 'true');
+      link.append(arrow);
+      links.append(link);
+    });
+    management.append(links, element('p', 'management-status', managementLinks[key].status));
+    heading.append(management);
     const select = document.querySelector(`#${key}-filter`);
     config.statuses.forEach(status => { const option = element('option', '', status); option.value = status; select.append(option); });
     document.querySelector(`#${key}-search`).addEventListener('input', event => { filters[key].query = event.target.value; updateTable(key); });
@@ -224,7 +252,19 @@ if (document.querySelector('.dashboard-page')) {
     info.append(element('strong', '', record.name), element('p', '', record.event));
     card.append(date, info, element('span', 'session-time', record.time.replace(' IST', ''))); upcoming.append(card);
   });
-  document.querySelector('#recent-leads').append(renderTable('leads', getPreviewRecords('leads').slice(0,3), [['name','Full Name'],['goal','Primary Goal'],['status','Status'],['created','Created At']]));
+  if (!upcoming.children.length) {
+    const empty = element('div', 'empty-state');
+    empty.append(element('h3', '', 'No bookings yet'));
+    upcoming.append(empty);
+  }
+  const recentLeads = document.querySelector('#recent-leads');
+  if (getPreviewRecords('leads').length) {
+    recentLeads.append(renderTable('leads', getPreviewRecords('leads').slice(0,3), [['name','Full Name'],['goal','Primary Goal'],['status','Status'],['created','Created At']]));
+  } else {
+    const empty = element('div', 'empty-state');
+    empty.append(element('h3', '', 'No leads yet'));
+    recentLeads.append(empty);
+  }
 
   function showSection(key, focus = false) {
     if (key !== 'dashboard' && !Object.hasOwn(sections, key)) key = 'dashboard';
