@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark">
+  <title>Admin Portal · ApexFit</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-story" aria-label="ApexFit Admin">
+      <a class="brand" href="index.html" aria-label="ApexFit Admin home"><span class="brand-mark" aria-hidden="true">A<span>↗</span></span><span>Apex<span class="accent">Fit</span><small>ADMIN WORKSPACE</small></span></a>
+      <div class="story-copy"><p class="eyebrow">BEHIND EVERY STRONGER SELF.</p><h1>Great coaching.<br><span class="accent">Thoughtfully<br>managed.</span></h1><p>Your space to bring people, progress,<br>and the next big goal together.</p></div>
+      <div class="brand-art" aria-hidden="true"><span></span><span></span><span></span><span></span><i>↗</i></div>
+      <div class="story-footer"><span>APEXFIT COACHING</span><span>STRONGER, TOGETHER. ↗</span></div>
+    </section>
+    <section class="login-panel" aria-labelledby="login-title">
+      <div class="login-card">
+        <span class="preview-tag"><span class="status-dot"></span> UI PREVIEW</span>
+        <h2 id="login-title">Admin Portal</h2>
+        <p class="login-subtitle">Secure access for ApexFit management</p>
+        <!-- UI preview only. Connect real authentication later through a secure backend.
+             Do not collect or persist credentials here. No access control is implemented. -->
+        <form id="login-form" autocomplete="off">
+          <label for="login-identity">Email or username</label>
+          <input id="login-identity" type="text" placeholder="Your email or username" autocomplete="off" spellcheck="false">
+          <label for="login-password">Password</label>
+          <div class="password-field"><input id="login-password" type="password" placeholder="Enter password" autocomplete="off"><button id="password-toggle" type="button" aria-controls="login-password" aria-pressed="false" aria-label="Show password">Show</button></div>
+          <label class="check-label"><input type="checkbox" id="remember-me"> Remember me</label>
+          <button class="primary-button login-submit" type="submit">Login <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="preview-explanation">Preview only — no authentication is connected. Leave the fields blank to explore. Please don’t enter real credentials. Remember me has no effect yet.</p>
+        <div class="authorized"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6Z"/><path d="m8 12 3 3 5-6"/></svg> Authorized access only</div>
+      </div>
+      <p class="login-footer">ApexFit Admin <span>·</span> Built around your business.</p>
+    </section>
+  </main>
+  <noscript><p class="noscript">This UI preview needs JavaScript for navigation. <a href="dashboard.html">Open dashboard preview</a>.</p></noscript>
+</body>
+</html>
