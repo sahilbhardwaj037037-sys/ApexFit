@@ -79,3 +79,34 @@ if ('IntersectionObserver' in window) {
     });
   }
 }
+
+// Temporary n8n test webhook. Attach the handler before enabling the fields.
+const newsletterForm = document.querySelector('#newsletter-form');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', async event => {
+    event.preventDefault();
+    const fields = newsletterForm.querySelector('fieldset');
+    if (fields.disabled) return;
+    const status = document.querySelector('#newsletter-status');
+    const payload = {
+      first_name: document.querySelector('#newsletter-first-name').value.trim(),
+      email: document.querySelector('#newsletter-email').value.trim()
+    };
+    fields.disabled = true;
+    status.textContent = 'Submitting…';
+    try {
+      const response = await fetch('https://bysahilworks.app.n8n.cloud/webhook/apexfit-newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) throw new Error('Newsletter submission failed');
+      status.textContent = 'Thanks! Your sign-up was received.';
+    } catch {
+      status.textContent = 'We couldn’t submit your sign-up. Please try again.';
+    } finally {
+      fields.disabled = false;
+    }
+  });
+  newsletterForm.querySelector('fieldset').disabled = false;
+}
