@@ -136,15 +136,9 @@ The documentation capture review used an existing Chromium installation in an is
 
 These checks cover the local public page in Chromium. They are not cross-browser certification, an accessibility audit, a performance benchmark or evidence of production readiness.
 
-## Known limitations
+## Project scope
 
-- Some preview-only text and comments conflict with current code: JavaScript enables the newsletter form, analytics is configured to load, and several controls link to external services.
-- The newsletter uses a test webhook; reliable subscription handling and fitness-guide delivery are unverified.
-- Testimonials and transformation stories are illustrative. Headline client counts, experience, completion rates and ratings have no supporting evidence in this repository.
-- Admin data and authentication depend on an external backend. Its authorization, expiry enforcement, rate limiting and security configuration cannot be assessed from this frontend.
-- Admin enquiries are unconnected; replies are a UI demonstration only. Payment synchronization is unconfirmed.
-- Privacy and terms dialogs contain placeholder information and need reconciliation with the configured services before a public launch.
-- No automated test suite, hosting configuration or verified public deployment URL is included.
+ApexFit is a showcase project built to practice real-world website design, development and service integrations. It demonstrates a realistic coaching business experience; payments, bookings, authentication and automation have not been verified end to end for production use. Testimonials, transformations and business statistics are illustrative demo content.
 
 ## Credits and licensing
 
